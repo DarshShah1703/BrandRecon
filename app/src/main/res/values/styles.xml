@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+    <style name="cornerCut">
+        <item name="cornerSize">30%</item>
+    </style>
+
+    <style name="cornerCut_1">
+        <item name="cornerSize">20%</item>
+    </style>
+    <style name="circle">
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

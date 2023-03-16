@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/dark_background"
+    tools:context=".LogoDetectionActivity">
+
+    <LinearLayout
+        android:id="@+id/resultLayoutImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/layout"
+        android:layout_margin="10dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/outputImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/imageview_background"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/inputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/instructionTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/llSampleImage"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"
+                android:textColor="#FFFFFF"
+                android:text="@string/tv_description" />
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="70dp"
+                android:layout_marginEnd="70dp"
+                android:scrollbars="none"
+                >
+                <LinearLayout
+                    android:id="@+id/llSampleImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/captureImageFab"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgSampleOne"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/google_logo" app:shapeAppearanceOverlay="@style/cornerCut_1"
+                        android:elevation="3dp"
+                        android:layout_margin="4dp" />
+                    <androidx.legacy.widget.Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgSampleTwo"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/starbucks_logo"
+                        app:shapeAppearanceOverlay="@style/cornerCut_1"
+                        android:elevation="3dp"
+                        android:layout_margin="4dp"/>
+                    <androidx.legacy.widget.Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgSampleThree"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/mcdonalds_logo"
+                        app:shapeAppearanceOverlay="@style/cornerCut_1"
+                        android:elevation="3dp"
+                        android:layout_margin="4dp"/>
+                    <androidx.legacy.widget.Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgSampleFour"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/dominos_logo"
+                        app:shapeAppearanceOverlay="@style/cornerCut_1"
+                        android:elevation="3dp"
+                        android:layout_margin="4dp"/>
+                    <androidx.legacy.widget.Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgSampleFive"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/nestle_logo"
+                        app:shapeAppearanceOverlay="@style/cornerCut_1"
+                        android:elevation="3dp"
+                        android:layout_margin="4dp"/>
+                    <androidx.legacy.widget.Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgSampleSix"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/coca_cola_logo"
+                        app:shapeAppearanceOverlay="@style/cornerCut_1"
+                        android:elevation="3dp"
+                        android:layout_margin="4dp"/>
+                    <androidx.legacy.widget.Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgSampleSeven"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/lays_logo"
+                        app:shapeAppearanceOverlay="@style/cornerCut_1"
+                        android:elevation="3dp"
+                        android:layout_margin="4dp"/>
+                    <androidx.legacy.widget.Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgSampleEight"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/balaji_logo"
+                        app:shapeAppearanceOverlay="@style/cornerCut_1"
+                        android:elevation="3dp"
+                        android:layout_margin="4dp"/>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/captureImageFab"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_camera"
+                android:scaleType="centerInside"
+                android:background="@drawable/ripple_effect"
+                android:backgroundTint="#4FFFFFFF"
+                android:foreground="@drawable/click_effect_3"
+                app:shapeAppearanceOverlay="@style/circle"
+                android:elevation="10dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/resultLayoutTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/brandName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/artifika"
+                android:text="Brand Name"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="40dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnBrandDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Show Brand Details"
+                android:layout_margin="30dp"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:textColor="#022133"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:backgroundTint="#009FFF"
+                android:foreground="@drawable/click_effect_2"
+                android:clickable="false" />
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
