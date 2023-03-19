@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 
 // for text animation
@@ -78,7 +77,7 @@ public class HomeActivity extends AppCompatActivity {
         btnNameSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this,SearchByNameActivity.class));
+                startActivity(new Intent(HomeActivity.this, SearchByNameActivity.class));
             }
         });
         btnLogoSearch.setOnClickListener(new View.OnClickListener() {

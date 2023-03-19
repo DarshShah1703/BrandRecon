@@ -176,7 +176,7 @@
                         android:textColor="@color/black"
                         android:textSize="25dp"/>
                     <TextView
-                        android:id="@+id/RankedBy"
+                        android:id="@+id/brandRankedBy"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text=""
@@ -203,7 +203,7 @@
                 android:padding="15dp"
                 android:layout_gravity="center">
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ceoImg"
+                    android:id="@+id/brandCeoImg"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     app:srcCompat="@drawable/profile_image"
@@ -258,7 +258,7 @@
                 android:padding="15dp"
                 android:layout_gravity="center">
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/headquartersImg"
+                    android:id="@+id/brandHeadquartersImg"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     app:srcCompat="@drawable/imageview_background"
@@ -285,7 +285,7 @@
                         android:textSize="25dp"
                         android:textAlignment="textStart" />
                     <TextView
-                        android:id="@+id/headquartersName"
+                        android:id="@+id/brandHeadquarters"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
@@ -406,10 +406,10 @@
                         android:textSize="20dp"
                         android:textAlignment="textStart"/>
                     <TextView
-                        android:id="@+id/fondedIn"
+                        android:id="@+id/brandFonded"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Year"
+                        android:text="Year, address"
                         android:textStyle="normal"
                         android:textSize="15dp"
                         android:textColor="@color/black"
@@ -443,7 +443,7 @@
                     android:textSize="25dp"
                     android:textAlignment="textStart"/>
                 <TextView
-                    android:id="@+id/liveProject"
+                    android:id="@+id/brandLiveProject"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
@@ -601,6 +601,43 @@
         <androidx.legacy.widget.Space
             android:layout_width="match_parent"
             android:layout_height="20dp"/>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#AA00FF">
+                <TextView
+                    android:id="@+id/txtStockPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Stock Price"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="25dp"
+                    android:textAlignment="textStart"/>
+                <TextView
+                    android:id="@+id/brandStockPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textAlignment="textStart"
+                    android:clickable="true"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

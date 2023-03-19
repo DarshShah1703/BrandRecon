@@ -1,16 +1,11 @@
 package com.brandrecon;
 
-import android.app.Application;
-import android.media.MediaPlayer;
-import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,7 +22,7 @@ public class BrandDataCardAdapter extends FirebaseRecyclerAdapter<BrandDataCard,
 
     @Override
     protected void onBindViewHolder(@NonNull BrandHolder holder, int position, @NonNull BrandDataCard model) {
-        holder.setVideo(model);
+        holder.setData(model);
     }
 
     @NonNull
@@ -39,40 +34,88 @@ public class BrandDataCardAdapter extends FirebaseRecyclerAdapter<BrandDataCard,
     }
 
     public static class BrandHolder extends RecyclerView.ViewHolder {
-        TextView name, ceo, field, netWorth, parentCompany, revenue, visitAt;
-        String logoUrl;
-        ImageView logo;
+        TextView brandCeo,
+                brandDescription,
+                brandEmployees,
+                brandField,
+                brandFonded,
+                brandFounder,
+                brandHeadquarters,
+                brandLiveProject,
+                brandName,
+                brandNetWorth,
+                brandParentCompany,
+                brandRank,
+                brandRankedBy,
+                brandRankIn,
+                brandRevenue,
+                CustomerServiceNo,
+                brandStockPrice,
+                visitAt;
+        String logoUrl,headquartersPhoto,ceoPhoto;
+        ImageView brandCeoImg,brandHeadquartersImg,brandLogo;
        // VideoView logoAnimation;
 
-        LinearLayout layoutVideo,layoutDetails;
+        //LinearLayout layoutVideo,layoutDetails;
         public BrandHolder(@NonNull View itemView) {
 
             super(itemView);
-            name = itemView.findViewById(R.id.brandName);
-            ceo = itemView.findViewById(R.id.brandCeo);
-            field = itemView.findViewById(R.id.brandField);
-            netWorth =itemView.findViewById(R.id.brandNetWorth);
-            parentCompany = itemView.findViewById(R.id.brandParentCompany);
-            logoUrl = "";
-            revenue = itemView.findViewById(R.id.brandRevenue);
+            brandCeo = itemView.findViewById(R.id.brandCeo);
+            brandDescription = itemView.findViewById(R.id.brandDescription);
+            brandEmployees = itemView.findViewById(R.id.brandEmployees);
+            brandField =itemView.findViewById(R.id.brandField);
+            brandFonded = itemView.findViewById(R.id.brandFonded);
+            brandFounder = itemView.findViewById(R.id.brandFounder);
+            brandHeadquarters = itemView.findViewById(R.id.brandHeadquarters);
+            brandLiveProject = itemView.findViewById(R.id.brandLiveProject);
+            brandName = itemView.findViewById(R.id.brandName);
+            brandNetWorth = itemView.findViewById(R.id.brandNetWorth);
+            brandParentCompany = itemView.findViewById(R.id.brandParentCompany);
+            brandRank =itemView.findViewById(R.id.brandRank);
+            brandRankedBy = itemView.findViewById(R.id.brandRankedBy);
+            brandRankIn = itemView.findViewById(R.id.brandRankIn);
+            brandRevenue = itemView.findViewById(R.id.brandRevenue);
+            CustomerServiceNo = itemView.findViewById(R.id.CustomerServiceNo);
+            brandStockPrice = itemView.findViewById(R.id.brandStockPrice);
             visitAt = itemView.findViewById(R.id.visitAt);
-            logo = itemView.findViewById(R.id.brandLogo);
+
+            brandCeoImg = itemView.findViewById(R.id.brandCeoImg);
+            brandHeadquartersImg = itemView.findViewById(R.id.brandHeadquartersImg);
+            brandLogo = itemView.findViewById(R.id.brandLogo);
+
+
+            logoUrl = "";
+            headquartersPhoto = "";
+            ceoPhoto = "";
+
 
             //logoAnimation = (VideoView) itemView.findViewById(R.id.logoAnimation);
             //layoutVideo =itemView.findViewById(R.id.layoutVideo);
-            layoutDetails =itemView.findViewById(R.id.layoutDetails);
+            //layoutDetails =itemView.findViewById(R.id.layoutDetails);
         }
 
-        void setVideo(BrandDataCard obj){
+        void setData(BrandDataCard obj){
 
-
-            name.setText(obj.getName());
-            ceo.setText(obj.getCeo());
-            field.setText(obj.getField());
-            netWorth.setText(obj.getNetWorth());
-            parentCompany.setText(obj.getParentCompany());
-            Picasso.get().load(obj.getLogoUrl()).into(logo);
-            revenue.setText(obj.getRevenue());
+            brandCeo.setText(obj.getCeo());
+            Picasso.get().load(obj.getCeoPhoto()).into(brandCeoImg);
+            brandDescription.setText(obj.getDescription());
+            brandEmployees.setText(obj.getEmployees());
+            brandField.setText(obj.getField());
+            brandFonded.setText(obj.getFounded());
+            brandFounder.setText(obj.getFounders());
+            brandHeadquarters.setText(obj.getHeadquarters());
+            Picasso.get().load(obj.getHeadquartersPhoto()).into(brandHeadquartersImg);
+            brandLiveProject.setText(obj.getLiveProject());
+            Picasso.get().load(obj.getLogoUrl()).into(brandLogo);
+            brandName.setText(obj.getName());
+            brandNetWorth.setText(obj.getNetWorth());
+            brandParentCompany.setText(obj.getParentCompany());
+            brandRank.setText(obj.getRanked());
+            brandRankedBy.setText(obj.getRankedBy());
+            brandRankIn.setText(obj.getRankedIn());
+            brandRevenue.setText(obj.getRevenue());
+            CustomerServiceNo.setText(obj.getServiceNo());
+            brandStockPrice.setText(obj.getStockPrice());
             visitAt.setText(obj.getVisitAt());
 //            logoAnimation.setVideoPath(obj.getLogoAnimationUrl());
 //            logoAnimation.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
