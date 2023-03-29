@@ -13,6 +13,7 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.view.View.OnSystemUiVisibilityChangeListener
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -21,9 +22,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.exifinterface.media.ExifInterface
 import androidx.lifecycle.lifecycleScope
-import com.brandrecon.HomeActivity
-import com.brandrecon.LogoDetailsActivity
-import com.brandrecon.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.tensorflow.lite.support.image.TensorImage
@@ -45,6 +43,8 @@ class LogoDetectionActivity : AppCompatActivity(), View.OnClickListener {
         const val REQUEST_IMAGE_CAPTURE: Int = 1
         private const val MAX_FONT_SIZE = 96F
     }
+
+
 
     private lateinit var decorView: View
     private lateinit var captureImageFab: ImageView
@@ -140,7 +140,7 @@ class LogoDetectionActivity : AppCompatActivity(), View.OnClickListener {
             .build()
         val detector = ObjectDetector.createFromFileAndOptions(
             this,
-            "new_model_448.tflite",
+            "model.tflite",
             options
         )
 

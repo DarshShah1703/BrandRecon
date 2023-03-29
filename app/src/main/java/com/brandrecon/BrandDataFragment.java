@@ -30,6 +30,7 @@ public class BrandDataFragment extends Fragment {
     RecyclerView recyclerView;
     BrandDataCardAdapter brandDataCardAdapter;
     logoAnimationCardAdapter logoAnimationCardAdapter;
+    ConcatAdapter concatAdapter;
 
     public BrandDataFragment() {
         // Required empty public constructor
@@ -77,13 +78,14 @@ public class BrandDataFragment extends Fragment {
                         .setQuery(query, BrandDataCard.class)
                         .build();
 
-        brandDataCardAdapter = new BrandDataCardAdapter(options);
+        brandDataCardAdapter = new BrandDataCardAdapter(options,getContext());
         recyclerView.setAdapter(brandDataCardAdapter);
 
-        logoAnimationCardAdapter = new logoAnimationCardAdapter(options);
-
-        ConcatAdapter concatAdapter = new ConcatAdapter(logoAnimationCardAdapter,brandDataCardAdapter);
-        recyclerView.setAdapter(concatAdapter);
+        
+//
+//        logoAnimationCardAdapter = new logoAnimationCardAdapter(options);
+//        concatAdapter = new ConcatAdapter(logoAnimationCardAdapter,brandDataCardAdapter);
+//        recyclerView.setAdapter(concatAdapter);
 
         return view;
     }
@@ -92,14 +94,23 @@ public class BrandDataFragment extends Fragment {
     public void onStart() {
         super.onStart();
         brandDataCardAdapter.startListening();
-        logoAnimationCardAdapter.startListening();
+//        logoAnimationCardAdapter.startListening();
+
+
     }   
     @Override
     public void onStop() {
         super.onStop();
         brandDataCardAdapter.stopListening();
-        logoAnimationCardAdapter.stopListening();
+//        logoAnimationCardAdapter.stopListening();
     }
+
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        brandDataCardAdapter.startListening();
+////        logoAnimationCardAdapter.startListening();
+//    }
 }
 
 

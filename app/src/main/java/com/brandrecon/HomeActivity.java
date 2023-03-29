@@ -5,8 +5,10 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,8 +28,8 @@ public class HomeActivity extends AppCompatActivity {
 
     private View decorView;
 
-    LinearLayout btnNameSearch,btnLogoSearch;
-    VideoView backgroundVideo;
+    RelativeLayout btnNameSearch,btnLogoSearch;
+//    VideoView backgroundVideo;
     TextView tagLine;
     ImageView volumeUp,volumeOff;
 
@@ -55,7 +57,7 @@ public class HomeActivity extends AppCompatActivity {
         mediaPlayer.start();
         volumeCode = 0;
 
-        backgroundVideo =findViewById(R.id.backgroundVideo);
+        //backgroundVideo =findViewById(R.id.backgroundVideo);
         tagLine = findViewById(R.id.tagLine);
         setAnimation(tagLine.getText().toString());
         btnNameSearch = findViewById(R.id.btnNameSearch);
@@ -64,16 +66,16 @@ public class HomeActivity extends AppCompatActivity {
 
         volumeOff =findViewById(R.id.volumeOff);
 
-        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.background_video_2);
-        backgroundVideo.setVideoURI(uri);
-        backgroundVideo.start();
-
-        backgroundVideo.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mediaPlayer) {
-                mediaPlayer.setLooping(true);
-            }
-        });
+//        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.background_video_2);
+//        backgroundVideo.setVideoURI(uri);
+//        backgroundVideo.start();
+//
+//        backgroundVideo.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+//            @Override
+//            public void onPrepared(MediaPlayer mediaPlayer) {
+//                mediaPlayer.setLooping(true);
+//            }
+//        });
         btnNameSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -144,32 +146,32 @@ public class HomeActivity extends AppCompatActivity {
             mediaPlayer.start();
         }
 
-        backgroundVideo.start();
+//        backgroundVideo.start();
 
         super.onStart();
     }
 
     @Override
     protected void onResume() {
-        backgroundVideo.resume();
+//        backgroundVideo.resume();
         super.onResume();
     }
 
     @Override
     protected void onRestart() {
-        backgroundVideo.start();
+//        backgroundVideo.start();
         super.onRestart();
     }
 
     @Override
     protected void onPause() {
-        backgroundVideo.suspend();
+//        backgroundVideo.suspend();
         super.onPause();
     }
 
     @Override
     protected void onDestroy() {
-        backgroundVideo.stopPlayback();
+//        backgroundVideo.stopPlayback();
         super.onDestroy();
     }
 

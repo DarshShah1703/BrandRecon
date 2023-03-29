@@ -14,13 +14,9 @@
         android:id="@+id/layoutVideo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
-        <VideoView
-            android:id="@+id/logoAnimation"
-            android:layout_width="match_parent"
-            android:layout_height="1000dp"
-            android:soundEffectsEnabled="true"
-            />
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#FFF8E7">
     </LinearLayout>
 
 

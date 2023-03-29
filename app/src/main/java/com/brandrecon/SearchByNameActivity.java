@@ -5,12 +5,15 @@ import androidx.appcompat.widget.SearchView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
 public class SearchByNameActivity extends AppCompatActivity {
+    private View decorView;
+
 
     SearchView searchName;
     ListView suggestionList;
@@ -19,7 +22,18 @@ public class SearchByNameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_search_by_name);
+
+        decorView = getWindow().getDecorView();
+        decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
+            @Override
+            public void onSystemUiVisibilityChange(int i) {
+                if (i == 0){
+                    decorView.setSystemUiVisibility(hideSystemBars());
+                }
+            }
+        });
 
         searchName = (SearchView) findViewById(R.id.searchName);
         suggestionList =findViewById(R.id.suggestionList);
@@ -78,5 +92,22 @@ public class SearchByNameActivity extends AppCompatActivity {
     protected void onRestart() {
         status = 1;
         super.onRestart();
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus){
+            decorView.setSystemUiVisibility(hideSystemBars());
+        }
+    }
+
+    private int hideSystemBars(){
+        return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
 }

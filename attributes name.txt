@@ -1,0 +1,77 @@
+ceo,
+ceoPhoto,
+description,
+employees,
+field,
+founded,
+founders,
+headquarters,
+headquartersPhoto,
+liveProject,
+logoAnimationUrl,
+logoUrl,
+name,
+netWorth,
+parentCompany,
+ranked,
+rankedBy,
+rankedIn,
+revenue,
+serviceNo,
+stockPrice,
+visitAt;
+
+
+
+String ceo,
+String ceoPhoto,
+String description,
+String employees,
+String field,
+String founded,
+String founders,
+String headquarters,
+String headquartersPhoto,
+String liveProject,
+String logoAnimationUrl,
+String logoUrl,
+String name,
+String netWorth,
+String parentCompany,
+String ranked,
+String rankedBy,
+String rankedIn,
+String revenue,
+String serviceNo,
+String stockPrice,
+String visitAt;
+
+
+ceo - brandCeo 
+
+description - brandDescription,
+employees - brandEmployees
+field - brandField
+founded - brandFonded 
+founders - brandFounder
+headquarters - brandHeadquarters
+
+liveProject - brandLiveProject 
+
+
+name - brandName
+netWorth - brandNetWorth
+parentCompany - brandParentCompany
+ranked - brandRank
+rankedBy - brandRankedBy
+rankedIn - brandRankIn
+revenue - brandRevenue
+serviceNo - CustomerServiceNo
+stockPrice - brandStockPrice 
+visitAt - visitAt
+
+ceoPhoto - brandCeoImg
+headquartersPhoto - brandHeadquartersImg
+logoUrl - brandLogo 
+
+logoAnimationUrl - 

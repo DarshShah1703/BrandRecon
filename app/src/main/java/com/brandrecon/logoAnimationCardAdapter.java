@@ -47,7 +47,7 @@ public class logoAnimationCardAdapter extends FirebaseRecyclerAdapter<BrandDataC
             logoAnimationCardView = (CardView) itemView.findViewById(R.id.logoAnimationCardView);
         }
 
-        void setVideo(BrandDataCard obj){
+        public void setVideo(BrandDataCard obj){
 
             logoAnimation.setVideoPath(obj.getLogoAnimationUrl());
             logoAnimation.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -62,12 +62,8 @@ public class logoAnimationCardAdapter extends FirebaseRecyclerAdapter<BrandDataC
                 public void onCompletion(MediaPlayer mediaPlayer) {
                    mediaPlayer.stop();
                    logoAnimationCardView.setVisibility(View.GONE);
-
                 }
             });
-            
-
-            
         }
     }
 }
