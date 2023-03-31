@@ -100,8 +100,7 @@ public class BrandDataCardAdapter extends FirebaseRecyclerAdapter<BrandDataCard,
 
             logoAnimation = itemView.findViewById(R.id.logoAnimation);
             logoAnimationCardView = itemView.findViewById(R.id.logoAnimationCardView);
-
-            Animation animation = AnimationUtils.loadAnimation(itemView.getContext(),R.anim.numbers_animation);
+            
 
 //            brandStockPrice.setAnimation(animation);
             
@@ -164,6 +163,13 @@ public class BrandDataCardAdapter extends FirebaseRecyclerAdapter<BrandDataCard,
                 @Override
                 public void onPrepared(MediaPlayer mediaPlayer) {
                     mediaPlayer.start();
+                    float videoRatio=mediaPlayer.getVideoWidth()/(float)mediaPlayer.getVideoHeight();
+                    float screenRatio=logoAnimation.getWidth()/(float) logoAnimation.getHeight();
+                    float scale=videoRatio/screenRatio;
+                    if(scale>=1f)
+                        logoAnimation.setScaleX(scale);
+                    else
+                        logoAnimation.setScaleY(1f/scale);
                 }
             });
 
@@ -181,3 +187,8 @@ public class BrandDataCardAdapter extends FirebaseRecyclerAdapter<BrandDataCard,
         view.startAnimation(slidIn);
     }
 }
+
+
+
+
+

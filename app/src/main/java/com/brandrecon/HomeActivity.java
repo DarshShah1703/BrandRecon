@@ -1,41 +1,42 @@
 package com.brandrecon;
 
+
 import android.content.Intent;
-import android.media.MediaPlayer;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.VideoView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.motion.widget.MotionLayout;
 
 
 // for text animation
 import android.os.Handler;
 import android.os.Message;
 
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import render.animations.Flip;
+import render.animations.Render;
 
 
 public class HomeActivity extends AppCompatActivity {
 
     private View decorView;
 
-    RelativeLayout btnNameSearch,btnLogoSearch;
-//    VideoView backgroundVideo;
+    CardView btnNameSearch,btnLogoSearch;
+    LinearLayout upper_circle_small_pink;
     TextView tagLine;
-    ImageView volumeUp,volumeOff;
+    int transitionState;
+    MotionLayout motionLayout;
+    Render renderSearchBtn,renderLogoBtn;
 
-    int volumeCode;
-
-    MediaPlayer mediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,57 +52,55 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        mediaPlayer = MediaPlayer.create(this,R.raw.background_music);
-        mediaPlayer.setLooping(true);
-        mediaPlayer.setVolume(50,50);
-        mediaPlayer.start();
-        volumeCode = 0;
+        motionLayout = findViewById(R.id.motion_layout);
 
-        //backgroundVideo =findViewById(R.id.backgroundVideo);
+
+        upper_circle_small_pink = findViewById(R.id.upper_circle_small_pink);
+
+
         tagLine = findViewById(R.id.tagLine);
         setAnimation(tagLine.getText().toString());
+
         btnNameSearch = findViewById(R.id.btnNameSearch);
         btnLogoSearch = findViewById(R.id.btnLogoSearch);
-        volumeUp =findViewById(R.id.volumeUp);
 
-        volumeOff =findViewById(R.id.volumeOff);
-
-//        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.background_video_2);
-//        backgroundVideo.setVideoURI(uri);
-//        backgroundVideo.start();
-//
-//        backgroundVideo.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-//            @Override
-//            public void onPrepared(MediaPlayer mediaPlayer) {
-//                mediaPlayer.setLooping(true);
-//            }
-//        });
+        renderSearchBtn = new Render(HomeActivity.this);
+        renderSearchBtn.setAnimation(Flip.InY(btnNameSearch));
         btnNameSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, SearchByNameActivity.class));
+                renderSearchBtn.start();
+                Thread t= new Thread(){
+                    public void run() {
+                        try {
+                            sleep(500);
+                            startActivity(new Intent(HomeActivity.this, SearchByNameActivity.class));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+		        t.start();
             }
         });
+        renderLogoBtn = new Render(HomeActivity.this);
+        renderLogoBtn.setAnimation(Flip.InY(btnLogoSearch));
         btnLogoSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, LogoDetectionActivity.class));
-            }
-        });
-        volumeUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mediaPlayer.start();
-                volumeCode=0;
-                volumeUp.setVisibility(View.GONE);
-            }
-        });
-        volumeOff.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mediaPlayer.stop();
-                volumeCode=1;
-                volumeOff.setVisibility(View.VISIBLE);
+                renderLogoBtn.start();
+                Thread t= new Thread(){
+                    public void run() {
+                        try {
+                            sleep(500);
+                            startActivity(new Intent(HomeActivity.this, LogoDetectionActivity.class));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+                t.start();
+
             }
         });
     }
@@ -136,43 +135,51 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-
-
-
-        if (volumeCode==0){
-            mediaPlayer.stop();
+        if(transitionState == 1) {
+            motionLayout.transitionToStart();
+            transitionState = 0;
         }
-        else{
-            mediaPlayer.start();
+        else {
+            motionLayout.transitionToEnd();
+            transitionState = 1;
         }
-
-//        backgroundVideo.start();
+        renderSearchBtn.start();
+        renderLogoBtn.start();
 
         super.onStart();
     }
 
     @Override
     protected void onResume() {
-//        backgroundVideo.resume();
+        if(transitionState == 1) {
+            motionLayout.transitionToStart();
+            transitionState = 0;
+        }
+        else {
+            motionLayout.transitionToEnd();
+            transitionState = 1;
+        }
+
+        renderSearchBtn.start();
+        renderLogoBtn.start();
+
         super.onResume();
     }
 
     @Override
     protected void onRestart() {
-//        backgroundVideo.start();
+        if(transitionState == 1) {
+            motionLayout.transitionToStart();
+            transitionState = 0;
+        }
+        else {
+            motionLayout.transitionToEnd();
+            transitionState = 1;
+        }
         super.onRestart();
-    }
 
-    @Override
-    protected void onPause() {
-//        backgroundVideo.suspend();
-        super.onPause();
-    }
-
-    @Override
-    protected void onDestroy() {
-//        backgroundVideo.stopPlayback();
-        super.onDestroy();
+        renderSearchBtn.start();
+        renderLogoBtn.start();
     }
 
     @Override

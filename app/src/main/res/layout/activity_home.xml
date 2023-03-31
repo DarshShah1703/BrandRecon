@@ -8,12 +8,14 @@
     android:fitsSystemWindows="false"
     tools:context=".HomeActivity"
     android:background="@color/dark_background"
+
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,135 +31,121 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <RelativeLayout
-            android:id="@+id/linearLayout"
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/motion_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
+            app:layoutDescription="@xml/activity_home_xml_relayout_scene"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/homeToolBar">
-            <!--            <VideoView-->
-            <!--                android:id="@+id/backgroundVideo"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="match_parent"-->
-            <!--                android:layout_alignParentBottom="true"-->
-            <!--                android:layout_alignParentTop="true"/>-->
-
-            <!--            <androidx.legacy.widget.Space-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="70dp" />-->
+            app:layout_constraintTop_toBottomOf="@+id/homeToolBar"
+            >
 
             <LinearLayout
                 android:id="@+id/layout1"
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
                 android:background="@drawable/home_background_part1"
-                android:orientation="vertical" />
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
+                android:id="@+id/small_corner_pink"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/home_background_part2" />
+                android:background="@drawable/home_background_part2"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <LinearLayout
+                android:id="@+id/middle_circle_pink"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_below="@+id/layout1"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="25dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/home_background_part4" />
+                android:background="@drawable/home_background_part4"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout1"
+                app:layout_constraintVertical_bias="0.13999999" />
 
             <LinearLayout
+                android:id="@+id/upper_circle_small_pink"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="200dp"
-                android:background="@drawable/home_background_part3" />
+                android:background="@drawable/home_background_part3"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.25" />
 
             <LinearLayout
+                android:id="@+id/bottom_circle_blue"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="30dp"
-                android:layout_marginBottom="40dp"
-                android:background="@drawable/home_background_part5" />
+                android:background="@drawable/home_background_part5"
+
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.13"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.94" />
+
 
             <TextView
                 android:id="@+id/tagLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="80dp"
                 android:fontFamily="@font/aguafina_script"
+                android:foreground="@drawable/glass_effect_textfield"
                 android:gravity="center"
-                android:text="'Reveal the True Identity of Your Brand with BrandRecon'"
+                android:paddingTop="10dp"
+                android:text="'Reveal the True Identity of Your Brand with Recon"
                 android:textColor="#FFFFFF"
                 android:textSize="30dp"
                 android:textStyle="bold"
-                android:visibility="visible" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.1000000" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_margin="20dp"
-                android:orientation="vertical">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/volumeUp"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/ripple_effect"
-                    android:clickable="true"
-                    android:foreground="@drawable/click_effect_2"
-                    android:src="@drawable/ic_volume_up"
-                    android:visibility="gone"
-                    app:shapeAppearanceOverlay="@style/circle" />
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/volumeOff"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/ripple_effect"
-                    android:clickable="true"
-                    android:foreground="@drawable/click_effect_2"
-                    android:src="@drawable/ic_volume_off"
-                    android:visibility="gone"
-                    app:shapeAppearanceOverlay="@style/circle" />
-
-            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/layout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tagLine"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="40dp"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="30dp">
+                android:padding="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tagLine">
 
                 <RelativeLayout
-                    android:id="@+id/btnNameSearch"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:gravity="center_horizontal">
+                    android:gravity="center_horizontal"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/card1"
@@ -167,6 +155,7 @@
                         android:layout_marginTop="100dp"
                         android:layout_marginEnd="40dp"
                         app:cardBackgroundColor="#BC000000"
+                        android:foreground="@drawable/glass_effect"
                         app:cardCornerRadius="15dp"
                         app:cardElevation="0dp">
 
@@ -186,6 +175,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/btnNameSearch"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="50dp"
@@ -208,11 +198,12 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/btnLogoSearch"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:gravity="center_horizontal">
+                    android:gravity="center_horizontal"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/card2"
@@ -222,6 +213,7 @@
                         android:layout_marginTop="100dp"
                         android:layout_marginEnd="40dp"
                         app:cardBackgroundColor="#BC000000"
+                        android:foreground="@drawable/glass_effect"
                         app:cardCornerRadius="15dp"
                         app:cardElevation="0dp">
 
@@ -241,6 +233,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/btnLogoSearch"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="50dp"
@@ -262,7 +255,7 @@
 
                 </RelativeLayout>
             </LinearLayout>
-        </RelativeLayout>
+        </androidx.constraintlayout.motion.widget.MotionLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.navigation.NavigationView
