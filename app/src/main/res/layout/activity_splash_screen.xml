@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.50"
+        app:layout_constraintVertical_bias="0.45"
         app:srcCompat="@drawable/all_corners"
         android:visibility="gone"/>
     <com.google.android.material.imageview.ShapeableImageView
@@ -32,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.50"
+        app:layout_constraintVertical_bias="0.45"
         app:srcCompat="@drawable/left_top_corner"
         android:visibility="gone"/>
 
@@ -46,7 +46,7 @@
         app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.50"
+        app:layout_constraintVertical_bias="0.45"
         app:srcCompat="@drawable/left_bottom_corner"
         android:visibility="gone"/>
 
@@ -60,7 +60,7 @@
         app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.50"
+        app:layout_constraintVertical_bias="0.45"
         app:srcCompat="@drawable/right_top_corner"
         android:visibility="gone"/>
 
@@ -74,7 +74,7 @@
         app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.50"
+        app:layout_constraintVertical_bias="0.45"
         app:srcCompat="@drawable/right_bottom_corner"
         android:visibility="gone"/>
 
@@ -88,7 +88,7 @@
         app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.50"
+        app:layout_constraintVertical_bias="0.45"
         app:srcCompat="@drawable/outer_circle_border"
         android:visibility="gone"/>
     <com.google.android.material.imageview.ShapeableImageView
@@ -101,7 +101,7 @@
         app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.50"
+        app:layout_constraintVertical_bias="0.45"
         app:srcCompat="@drawable/inner_solid_circle"
         android:visibility="gone"/>
 
@@ -115,8 +115,60 @@
         app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.50"
+        app:layout_constraintVertical_bias="0.45"
         app:srcCompat="@drawable/inner_r_text"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="Recon"
+        android:textColor="#FFFFFF"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.70"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tageLinePart1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="See More"
+        android:textColor="#FFFFFF"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.50"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tageLinePart2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="Know More"
+        android:textColor="#FFFFFF"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.50"
         android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

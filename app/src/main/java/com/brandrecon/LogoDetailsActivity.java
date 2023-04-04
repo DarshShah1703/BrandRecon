@@ -1,14 +1,19 @@
 package com.brandrecon;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
+
+import com.google.android.material.tabs.TabLayout;
 
 public class LogoDetailsActivity extends AppCompatActivity {
     private View decorView;
+    TabLayout tabLayout;
+    ViewPager viewPager;
+    MyFragmentPagerAdapter myFragmentPagerAdapter;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,18 +27,37 @@ public class LogoDetailsActivity extends AppCompatActivity {
                 }
             }
         });
+        tabLayout=findViewById(R.id.tabLayout);
+        viewPager=findViewById(R.id.viewPager);
 
-        String brandName = getIntent().getStringExtra("name");
-        Bundle bundle = new Bundle();
-        bundle.putString("brandName",brandName);
+        tabLayout.addTab(tabLayout.newTab());
+        tabLayout.addTab(tabLayout.newTab());
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        BrandDataFragment brandDataFragment = new BrandDataFragment();
-        brandDataFragment.setArguments(bundle);
+        BrandDataFragmentPart1 brandDataFragmentPart1 = new BrandDataFragmentPart1();
+        BrandDataFragmentPart2 brandDataFragmentPart2 = new BrandDataFragmentPart2();
+        
+        String brandName = getIntent().getStringExtra("brandName");
+        Bundle bundleForFragment1 = new Bundle();
+        bundleForFragment1.putString("brandName", brandName);
+
+        Bundle bundleForFragment2 = new Bundle();
+        bundleForFragment2.putString("brandName", brandName);
+        myFragmentPagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
+        myFragmentPagerAdapter.addFragment(brandDataFragmentPart1, "Tab 1");
+        myFragmentPagerAdapter.addFragment(brandDataFragmentPart2, "Tab 2");
+        brandDataFragmentPart1.setArguments(bundleForFragment1);
+        brandDataFragmentPart2.setArguments(bundleForFragment2);
+        viewPager.setAdapter(myFragmentPagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+//        BrandDataFragment brandDataFragment = new BrandDataFragment();
+//        brandDataFragment.setArguments(bundle);
 
 
 //                Intent intent = new Intent(SearchByNameActivity.this, BrandDataFragment.class);
 //                intent.putExtra("brandName", brandName);
-        getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,brandDataFragment ).commit();
+//        getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,brandDataFragment ).commit();
     }
 
     @Override

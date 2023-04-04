@@ -13,7 +13,6 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.view.View.OnSystemUiVisibilityChangeListener
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -140,7 +139,7 @@ class LogoDetectionActivity : AppCompatActivity(), View.OnClickListener {
             .build()
         val detector = ObjectDetector.createFromFileAndOptions(
             this,
-            "model.tflite",
+            "model_448_version2.tflite",
             options
         )
 
@@ -291,7 +290,7 @@ class LogoDetectionActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnBrandDetails -> {
                 val brandName:String = brandName.text.toString()
                 val intent: Intent = Intent(this@LogoDetectionActivity, LogoDetailsActivity::class.java)
-                intent.putExtra("name",brandName)
+                intent.putExtra("brandName",brandName)
                 startActivity(intent)
             }
             R.id.imgSampleOne -> {

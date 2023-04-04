@@ -1,4 +1,13 @@
 "Reveal the True Identity of Your Brand with BrandRecon"
+"See it. Scan it. Know it."
+"Recon: The Key to Insights"
+"Uncover the Unknown with Recon"
+"Recon: Your Insight Assistant"   
+"Find it fast with Recon"
+Your eyes on the world.
+"Recon: The ultimate brand companion"
+Your Vision, Amplified by Recon.
+"Recon: See More, Know More"
 
 
 //        FirebaseRecyclerAdapter<BrandDataCard,logoAnimationViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<BrandDataCard, logoAnimationViewHolder>(options) {

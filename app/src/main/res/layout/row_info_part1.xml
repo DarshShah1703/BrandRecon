@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp">
+
+
+    <LinearLayout
+        android:id="@+id/layoutDetailsPart1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:background="@color/dark_background">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/logoAnimationCardView"
+            android:layout_width="match_parent"
+            android:layout_height="840dp"
+            android:background="@color/dark_background"
+            android:layout_gravity="center"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/layoutVideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <VideoView
+                    android:id="@+id/logoAnimation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:soundEffectsEnabled="true"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            android:layout_margin="10dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#6d5761"
+            android:foreground="@drawable/glass_effect"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/brandLogo"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    app:srcCompat="@drawable/loading"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    />
+                <androidx.legacy.widget.Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"/>
+
+                <TextView
+                    android:id="@+id/brandName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/audiowide"
+                    android:padding="10dp"
+                    android:text="BrandName"
+                    android:textColor="@color/black"
+                    android:textSize="40dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="6dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#7d134d"
+            android:foreground="@drawable/glass_effect_down">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:layout_gravity="center">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/brandCeoImg"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/profile_image"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="5dp"
+                    app:shapeAppearanceOverlay="@style/cornerCut_1"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp"
+                    >
+                    <TextView
+                        android:id="@+id/txtCeo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="CEO"
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        android:textSize="15dp"
+                        android:textAlignment="textStart" />
+                    <TextView
+                        android:id="@+id/brandCeo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="40dp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            android:layout_margin="10dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#203e4a"
+            android:foreground="@drawable/glass_effect_down"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                <TextView
+                    android:id="@+id/txtDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Description"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="25dp"
+                    android:textAlignment="textStart" />
+                <TextView
+                    android:id="@+id/brandDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textAlignment="textStart" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="6dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#2A4165"
+            android:foreground="@drawable/glass_effect_down">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/txtField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:padding="10dp"
+                    android:text="Field"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="25dp"
+                    android:textAlignment="textStart"/>
+                <TextView
+                    android:id="@+id/brandField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textAlignment="textStart" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="6dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#176c04"
+                android:foreground="@drawable/glass_effect_down">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+
+                    android:gravity="center"
+                    android:layout_margin="10dp">
+                    <TextView
+                        android:id="@+id/txtParentcompany"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Parent Company"
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        android:textSize="20dp"
+                        android:textAlignment="textStart"/>
+                    <TextView
+                        android:id="@+id/brandParentCompany"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="30dp"
+                        android:textAlignment="textStart" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="6dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#203e4a"
+                android:foreground="@drawable/glass_effect_down">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/txtFoundedBy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:text="Founded By"
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        android:textSize="15dp"
+                        android:textAlignment="textStart"/>
+                    <TextView
+                        android:id="@+id/brandFounder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textAlignment="textStart"/>
+                    <TextView
+                        android:id="@+id/brandFonded"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Year, address"
+                        android:textStyle="normal"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:textAlignment="textStart"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="6dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#207676"
+            android:foreground="@drawable/glass_effect_down">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+
+                android:layout_gravity="center"
+                android:layout_margin="10dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/brandHeadquartersImg"
+                    android:layout_width="100dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/cornerCut_1"
+                    app:srcCompat="@drawable/imageview_background" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp"
+                    >
+                    <TextView
+                        android:id="@+id/txtHeadquarters"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Headquarters"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:textAlignment="textStart" />
+                    <TextView
+                        android:id="@+id/brandHeadquarters"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        android:textSize="15dp"
+                        android:layout_marginTop="5dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

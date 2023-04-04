@@ -107,17 +107,18 @@
 
 
             <TextView
-                android:id="@+id/tagLine"
+                android:id="@+id/appName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/aguafina_script"
+                android:fontFamily="serif"
                 android:foreground="@drawable/glass_effect_textfield"
                 android:gravity="center"
                 android:paddingTop="10dp"
-                android:text="'Reveal the True Identity of Your Brand with Recon"
+                android:text="Welcome"
                 android:textColor="#FFFFFF"
                 android:textSize="30dp"
                 android:textStyle="bold"
+                android:inAnimation="@android:anim/slide_in_left"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -129,7 +130,7 @@
                 android:id="@+id/layout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tagLine"
+                android:layout_below="@+id/appName"
                 android:layout_marginBottom="40dp"
                 android:gravity="center"
                 android:orientation="vertical"
@@ -137,7 +138,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tagLine">
+                app:layout_constraintTop_toBottomOf="@+id/appName">
 
                 <RelativeLayout
 

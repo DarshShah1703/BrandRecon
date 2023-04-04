@@ -69,7 +69,7 @@ public class BrandDataCardAdapter extends FirebaseRecyclerAdapter<BrandDataCard,
         ImageView brandCeoImg,brandHeadquartersImg,brandLogo;
         VideoView logoAnimation;
         CardView logoAnimationCardView;
-       // VideoView logoAnimation;
+        // VideoView logoAnimation;
 
         //LinearLayout layoutVideo,layoutDetails;
         public BrandHolder(@NonNull View itemView) {
@@ -100,10 +100,10 @@ public class BrandDataCardAdapter extends FirebaseRecyclerAdapter<BrandDataCard,
 
             logoAnimation = itemView.findViewById(R.id.logoAnimation);
             logoAnimationCardView = itemView.findViewById(R.id.logoAnimationCardView);
-            
+
 
 //            brandStockPrice.setAnimation(animation);
-            
+
 
 
             logoUrl = "";
@@ -187,7 +187,6 @@ public class BrandDataCardAdapter extends FirebaseRecyclerAdapter<BrandDataCard,
         view.startAnimation(slidIn);
     }
 }
-
 
 
 

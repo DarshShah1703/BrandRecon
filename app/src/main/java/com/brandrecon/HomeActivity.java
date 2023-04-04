@@ -14,14 +14,10 @@ import androidx.constraintlayout.motion.widget.MotionLayout;
 
 // for text animation
 import android.os.Handler;
-import android.os.Message;
+
 
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import java.util.Timer;
-import java.util.TimerTask;
-
 import render.animations.Flip;
 import render.animations.Render;
 
@@ -58,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
         upper_circle_small_pink = findViewById(R.id.upper_circle_small_pink);
 
 
-        tagLine = findViewById(R.id.tagLine);
+        tagLine = findViewById(R.id.appName);
         setAnimation(tagLine.getText().toString());
 
         btnNameSearch = findViewById(R.id.btnNameSearch);
@@ -106,35 +102,23 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setAnimation(final String s) {
-        final int[] i = new int[1];
-        i[0] = 0;
         tagLine.setText("");
-        final int length = s.length();
-        final Handler handler = new Handler()
-        {
-            @Override
-            public void handleMessage(Message msg) {
-                super.handleMessage(msg);
-                char c = s.charAt(i[0]);
-                tagLine.append(String.valueOf(c));
-                i[0]++;
-            }
-        };
-        final Timer timer = new Timer();
-        TimerTask taskEverySplitSecond = new TimerTask() {
+        new Handler().postDelayed(new Runnable() {
+            int index = 0;
+
             @Override
             public void run() {
-                handler.sendEmptyMessage(0);
-                if (i[0] == length - 1) {
-                    timer.cancel();
+                if (index < s.length()) {
+                    tagLine.append(String.valueOf(s.charAt(index++)));
+                    new Handler().postDelayed(this, 50); // Delay between each character animation
                 }
             }
-        };
-        timer.schedule(taskEverySplitSecond, 1, 50);
+        }, 50);
     }
 
     @Override
     protected void onStart() {
+        setAnimation(tagLine.getText().toString());
         if(transitionState == 1) {
             motionLayout.transitionToStart();
             transitionState = 0;
@@ -145,12 +129,14 @@ public class HomeActivity extends AppCompatActivity {
         }
         renderSearchBtn.start();
         renderLogoBtn.start();
-
         super.onStart();
+
+
     }
 
     @Override
     protected void onResume() {
+        setAnimation(tagLine.getText().toString());
         if(transitionState == 1) {
             motionLayout.transitionToStart();
             transitionState = 0;
@@ -159,15 +145,15 @@ public class HomeActivity extends AppCompatActivity {
             motionLayout.transitionToEnd();
             transitionState = 1;
         }
-
         renderSearchBtn.start();
         renderLogoBtn.start();
-
         super.onResume();
+
     }
 
     @Override
     protected void onRestart() {
+        setAnimation(tagLine.getText().toString());
         if(transitionState == 1) {
             motionLayout.transitionToStart();
             transitionState = 0;
@@ -176,10 +162,9 @@ public class HomeActivity extends AppCompatActivity {
             motionLayout.transitionToEnd();
             transitionState = 1;
         }
-        super.onRestart();
-
         renderSearchBtn.start();
         renderLogoBtn.start();
+        super.onRestart();
     }
 
     @Override

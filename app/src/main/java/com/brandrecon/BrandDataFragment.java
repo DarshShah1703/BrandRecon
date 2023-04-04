@@ -81,7 +81,7 @@ public class BrandDataFragment extends Fragment {
         brandDataCardAdapter = new BrandDataCardAdapter(options,getContext());
         recyclerView.setAdapter(brandDataCardAdapter);
 
-        
+
 //
 //        logoAnimationCardAdapter = new logoAnimationCardAdapter(options);
 //        concatAdapter = new ConcatAdapter(logoAnimationCardAdapter,brandDataCardAdapter);
@@ -97,7 +97,7 @@ public class BrandDataFragment extends Fragment {
 //        logoAnimationCardAdapter.startListening();
 
 
-    }   
+    }
     @Override
     public void onStop() {
         super.onStop();
@@ -112,6 +112,5 @@ public class BrandDataFragment extends Fragment {
 ////        logoAnimationCardAdapter.startListening();
 //    }
 }
-
 
 
