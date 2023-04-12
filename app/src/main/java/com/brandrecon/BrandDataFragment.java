@@ -29,8 +29,6 @@ public class BrandDataFragment extends Fragment {
 
     RecyclerView recyclerView;
     BrandDataCardAdapter brandDataCardAdapter;
-    logoAnimationCardAdapter logoAnimationCardAdapter;
-    ConcatAdapter concatAdapter;
 
     public BrandDataFragment() {
         // Required empty public constructor

@@ -29,8 +29,7 @@ public class BrandDataFragmentPart1 extends Fragment {
 
     RecyclerView recyclerView;
     BrandDataPartCardAdapter1 brandDataCardAdapter;
-    logoAnimationCardAdapter logoAnimationCardAdapter;
-    ConcatAdapter concatAdapter;
+
 
     String companyName;
     TextView demo;
