@@ -52,7 +52,7 @@ public class SearchByNameActivity extends AppCompatActivity{
         searchName = (SearchView) findViewById(R.id.searchName);
         suggestionList =findViewById(R.id.suggestionList);
         suggestionList.setVisibility(View.GONE);
-        String[] brandNames = {"Amazon.com Inc.","Bayerische Motoren Werke AG","Apple Inc.","Balaji Wafers","Burger King Corporation","Chipotle Mexican Grill", "Coca Cola Dell Inc.","Dominos Pizza Inc.", "Flipkart Private Limited", "Google LLC", "HDFC Bank HP Inc.", "ICICI Bank", "Instagram" ,"Kentucky Fried Chicken Corporation", "Kotak Mahindra Bank Ltd", "McDonalds Corporation", "Mercedes Benz Group AG", "Meta Platforms Inc." ,"Microsoft Corporation", "Nestle S.A.", "OnePlus PepsiCo Inc.", "Pizza Hut", "Raymond Ltd", "State Bank of India", "Samsung Electronics Co. Ltd." ,"Starbucks Corporation","Walmart Inc."};
+        String[] brandNames = {"Amazon.com Inc.","Bayerische Motoren Werke AG","Apple Inc.","Balaji Wafers","Burger King Corporation","Chipotle Mexican Grill", "Coca Cola","Dell Inc.","Dominos Pizza Inc.", "Flipkart Private Limited", "Google LLC", "HDFC Bank","HP Inc.", "ICICI Bank", "Instagram" ,"Kentucky Fried Chicken Corporation", "Kotak Mahindra Bank Ltd", "McDonalds Corporation", "Mercedes Benz Group AG", "Meta Platforms Inc." ,"Microsoft Corporation", "Nestle S.A.", "OnePlus","PepsiCo Inc.", "Pizza Hut", "Raymond Ltd", "State Bank of India", "Samsung Electronics Co. Ltd." ,"Starbucks Corporation","Walmart Inc."};
 
 
         adapter = new ArrayAdapter<>(this,R.layout.list_row,brandNames);
